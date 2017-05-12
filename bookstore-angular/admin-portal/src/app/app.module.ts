@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import 'hammerjs';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MdButtonModule} from '@angular/material';
+import {MdButtonModule, MdToolbarModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
@@ -18,7 +18,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    BrowserAnimationsModule, MdButtonModule
+    BrowserAnimationsModule, MdButtonModule, MdToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

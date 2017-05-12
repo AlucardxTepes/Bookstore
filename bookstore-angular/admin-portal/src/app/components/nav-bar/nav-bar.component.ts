@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
+  private loggedIn = false;
+
+  toggleDisplay() {
+    this.loggedIn = !this.loggedIn;
+  }
   constructor() { }
 
   ngOnInit() {
