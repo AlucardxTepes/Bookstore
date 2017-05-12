@@ -4,8 +4,11 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  * Created by Alucard on 12-May-17.
@@ -18,7 +21,8 @@ public class Role implements Serializable {
   @Id
   private int roleId;
   private String name;
-  private Set<UserRole> userroles = new HashSet<>();
+  @OneToMany(mappedBy = "role", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+  private Set<UserRole> userRoles = new HashSet<>();
 
   Role() {
   }
@@ -39,11 +43,11 @@ public class Role implements Serializable {
     this.name = name;
   }
 
-  public Set<UserRole> getUserroles() {
-    return userroles;
+  public Set<UserRole> getUserRoles() {
+    return userRoles;
   }
 
-  public void setUserroles(Set<UserRole> userroles) {
-    this.userroles = userroles;
+  public void setUserRoles(Set<UserRole> userRoles) {
+    this.userRoles = userRoles;
   }
 }
