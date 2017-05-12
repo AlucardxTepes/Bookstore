@@ -2,7 +2,6 @@ package com.alucard.config;
 
 import com.alucard.service.UserSecurityService;
 
-import org.apache.catalina.security.SecurityUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
@@ -31,10 +30,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   private Environment env;
 
   @Autowired
-  private UserSecurityService userSecurityService; // todo
+  private UserSecurityService userSecurityService;
 
   private BCryptPasswordEncoder passwordEncoder() {
-    return SecurityUtility.passwordEncoder(); // todo
+    return SecurityUtility.passwordEncoder();
   }
 
   @Override

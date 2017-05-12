@@ -55,7 +55,7 @@ public class User implements UserDetails, Serializable {
 
   @Override
   public String getPassword() {
-    return null;
+    return password;
   }
 
   @Override
@@ -75,7 +75,7 @@ public class User implements UserDetails, Serializable {
 
   @Override
   public boolean isCredentialsNonExpired() {
-    return false;
+    return true;
   }
 
   @Override
