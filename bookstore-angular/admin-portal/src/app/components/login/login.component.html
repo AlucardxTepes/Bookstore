@@ -15,4 +15,7 @@
       </md-grid-tile>
     </md-grid-list>
   </div>
+  <div [hidden]="!loggedIn">
+    <h3>{{credential.username}} logged in.</h3>
+  </div>
 </div>

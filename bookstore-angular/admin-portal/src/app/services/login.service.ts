@@ -21,8 +21,19 @@ export class LoginService {
         'Content-Type' : 'application/x-www-form-urlencoded',
         'Authorization' : basicHeader
     });
-
     return this.http.get(url, {headers: headers});
+  }
+  checkSession() {
+    let url = 'http://localhost:8181/checkSession';
+    let headers = new Headers ({
+      'x-auth-token' : localStorage.getItem('xAuthToken')
+    });
+    return this.http.get(url, {headers: headers});
+  }
+  logout() {
+    let url = 'http://localhost:8181/user/logout';
+    // blank auth header
+    return this.http.post(url, '');
   }
 
 }
