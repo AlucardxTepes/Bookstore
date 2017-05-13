@@ -19,9 +19,9 @@ export class LoginComponent implements OnInit {
       res => {
         // if successful, receive response (res)
         console.log(res);
-        localStorage.set('xAuthToken', res.json().token); // auth stored in local browser
+        localStorage.setItem('xAuthToken', res.json().token); // auth stored in local browser
         this.loggedIn = true;
-        location.reload(); // refresh page
+        // location.reload(); // refresh page
       },
       error => {
         console.log(error);
